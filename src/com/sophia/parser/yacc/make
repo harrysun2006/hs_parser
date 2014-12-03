@@ -1,0 +1,5 @@
+# jyacc -J -Jclass=Calculator -Jextends=com.sophia.parser.AbstractParser -Jsemantic=Object -Jpackage=com.sophia.parser.yacc -Jnorun -Jnodebug -Jnoconstruct calculator.y
+# jyacc -J -Jclass=Calculator2 -Jextends=com.sophia.parser.AbstractParser -Jsemantic=Token -Jpackage=com.sophia.parser.yacc -Jnorun -Jnodebug -Jnoconstruct calculator2.y
+# jyacc -J -Jclass=Evaluator -Jextends=com.sophia.parser.AbstractParser -Jsemantic=Object -Jpackage=com.sophia.parser.yacc -Jnorun -Jnodebug -Jnoconstruct evaluator.y
+jyacc -J -Jclass=Evaluator2 -Jextends=com.sophia.parser.AbstractParser -Jsemantic=Token -Jpackage=com.sophia.parser.yacc -Jnorun -Jnodebug -Jnoconstruct evaluator2.y
+jyacc -J -Jclass=Shell -Jextends=com.sophia.parser.AbstractParser -Jsemantic=Object -Jpackage=com.sophia.parser.yacc -Jnorun -Jnodebug -Jnoconstruct shell.y

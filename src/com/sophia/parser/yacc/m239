@@ -1,0 +1,75 @@
+<PARAMETER>pPayAcc
+<NAME>工资表帐套
+<NAME_E>Pay account
+<TYPE>C
+<SQL>SELECT gzlb,lbmc FROM hs_gzlb
+<DEFAULT>01
+
+<PARAMETER>pPeriod
+<NAME>结算期间
+<NAME_E>Pay periods
+<TYPE>C
+<SQL>SELECT DISTINCT jsqj FROM hs_gz_01
+
+<PARAMETER>pNot
+<NAME>应税/免税
+<NAME_E>Tax/Not tax
+<TYPE>C
+<CODE>全部,应税,免税
+<CODE_E>All,Tax,Not tax
+<RPTKEY>1
+
+<PARAMETER>pRegion
+<NAME>计税地区
+<NAME_E>Tax region
+<TYPE>C
+<CODE>大陆,非大陆
+<CODE_E>Mainland,Not Mainland
+<RPTKEY>1
+
+<SCRIPT>
+	local lcSql, lcForTaxCol, lcTaxSumCol, lcRegCol, lcSP1,lcSP2, lcMain, lcSPReg, lcRegExpr
+
+	if empty(pPayAcc) or empty(pPeriod)
+		return
+	endif
+
+	*====================================
+	*-- 下列内容可能需要根据实际情况更改 
+	*-----------------------------------
+	*-- 计税额栏位名称
+	lcForTaxCol = 's.f0033'
+
+	*-- 扣减税额栏位名称
+	lcTaxSumCol = 's.f0034'
+
+	*-- 员工区域栏位
+	lcRegCol = ''
+
+	*-- 大陆员工应税起始金额(默认的)
+	lcSP1 = '800'
+
+	*-- 非大陆员工应税起始金额
+	lcSP2 = '4000'
+	*====================================
+	lcMain = mlc('大陆','Mainland')
+	lcSPReg = iif(empty(lcRegCol), "&lcSP1.",;
+		" CASE &lcRegCol. WHEN '&lcMain.' THEN &lcSP1. ELSE &lcSP2. END")
+
+	lcRegExpr = iif(empty(pNot) or pNot=mlc("全部","All"), "", " AND &lcTaxSumCol. > 0 ") + ;
+		iif(empty(pRegion) or empty(lcRegCol), "", " AND &lcRegCol.='&pRegion.' ")
+
+	lcSql = "SELECT p.zgbh, p.zgxm, p.zwbh, s.jsqj, s.sfgz, " + ;
+		" &lcSPReg. AS sp, &lcForTaxCol. AS fortax, d.xs, d.kcs, &lcTaxSumCol. AS taxsum " + ;
+		" FROM hs_gz_&pPayAcc s " + ;
+		" LEFT JOIN hp_zd01 p ON s.zgbh = p.zgbh" + ;
+		" LEFT JOIN hs_sds d ON &lcForTaxCol. BETWEEN d.xxje AND d.sxje " + ;
+		" WHERE s.jsqj = '&pPeriod.' " + lcRegExpr
+
+	ExecSQL(lcSql, "_curReport")
+	if used("_curReport")
+		select recno() as sno, * from _curReport into cursor _curReport
+	endif
+
+<CAPTION>序号|员工编号|姓名|职务|期间|实发工资|减费用额|应纳所得税额|税率%|速算扣除数|扣减所得税额
+<CAPTION_E>SeqNo|EmpNo|Name|Position|Period|Income|Sub sum|Taxable income|Tax income|Tax rate%|Return sum|Tax

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Created-By: Apache Ant 1.5.3
+Extension-Name: Sophia Parser
+Specification-Title: Sophia Parser
+Specification-Vendor: Positec Power Tools
+Specification-Version: 1.0.0
+Implementation-Title: Sophia Parser
+Implementation-Vendor: Positec Power Tools
+Implementation-Vendor-Id: www.positec.com
+Implementation-Version: 1.0.0

@@ -1,0 +1,158 @@
+<project name="SophiaParser" default="build" basedir=".">
+<!--
+        "SophiaTree" component of the Sophia Pagination Project
+        $Id: build.xml,v 1.29.2.4 2004/02/15 15:48:42 mbecke Exp $
+        author: Harry Sun ( mailto:harry@thorn-bird.com )
+-->
+
+<!-- ========== Properties: Component Declarations ======================== -->
+
+  <!-- The name of this component -->
+  <property name="component.name"			value="sophia-parser"/>
+
+  <!-- The title of this component -->
+  <property name="component.title"			value="Sophia Parser Component"/>
+
+  <!-- The current version number of this component -->
+  <property name="component.version"		value="1.0.0"/>
+
+  <!-- Jar file name -->
+  <property name="jar.name"					value="./${component.name}-${component.version}.jar"/>
+
+<!-- ========== Properties: Property Files  =============================== -->
+
+<!-- ========== Properties: Directories ============================ -->
+
+  <!-- The base directory for component configuration files -->
+  <property name="base.home"				value="."/>
+  <property name="src.home"					value="${base.home}/src"/>
+  <property name="dist.home"				value="${base.home}/bin"/>
+  <property name="lib.home"					value="${base.home}/lib"/>
+  <property name="doc.home"					value="${base.home}/doc"/>
+  <property name="test.src.home"			value="${base.home}/test/src/"/>
+  <property name="test.dist.home"			value="${base.home}/test/bin/"/>
+
+<!-- ========== Properties: Javadoc Properties    ========================= -->
+
+  <property name="javadoc.j2sdk.link" value="http://java.sun.com/products/jdk/1.2/docs/api/"/>
+  <property name="javadoc.logging.link" value="http://jakarta.apache.org/commons/logging/apidocs/"/>
+
+<!-- ========== Compiler Defaults ========================================= -->
+
+  <!-- Should Java compilations set the 'debug' compiler option? -->
+  <property name="compile.debug"           value="true"/>
+
+  <!-- Should Java compilations set the 'deprecation' compiler option? -->
+  <property name="compile.deprecation"     value="true"/>
+
+  <!-- Should Java compilations set the 'optimize' compiler option? -->
+  <property name="compile.optimize"        value="true"/>
+
+  <!-- Construct compile classpath -->
+  <path id="compile.classpath">
+  	<pathelement location="${test.dist.home}"/>
+  	<pathelement path="${lib.home}"/>
+  	<fileset dir="${lib.home}">
+  	  <include name="**/*.jar"/>
+  	</fileset>
+  </path>
+
+<!-- ========== Test Execution Defaults =================================== -->
+
+  <!-- Anakia props -->
+
+  <property name="docs.src" value="./xdocs"/>
+  <property name="docs.dest" value="./docs"/>
+
+<!-- ========== Targets =================================================== -->
+
+<!-- ========== Targets: "Internal" Targets =============================== -->
+
+  <target name="init" description="Initialize and evaluate conditionals">
+    <echo message="-------- ${component.title} ${component.version} --------"/>
+    <filter token="name"		value="${component.name}"/>
+    <filter token="version"		value="${component.version}"/>
+  </target>
+
+<!-- ========== Targets: "External" Targets =============================== -->
+
+  <target name="build" depends="jar" description="Build the componenet &amp; build the test classes">
+  </target>
+
+  <target name="rebuild" depends="clean, build" description="Rebuild the componenet &amp; build the test classes">
+  </target>
+
+  <target name="jar" depends="compile" description="Create binary distribution">
+    <mkdir dir="${dist.home}"/>
+    <!--copy file="LICENSE.txt" todir="${dist.home}"/> 
+    <copy file="build.xml" todir="${dist.home}"/>
+    <copy file="README.txt" todir="${dist.home}"/-->
+    <jar jarfile="${jar.name}" manifest="${dist.home}/META-INF/MANIFEST.MF">
+    	<fileset dir="${dist.home}" excludes="vssver.scc">
+    		<exclude name = "com/test/**"/>
+    		<exclude name = "com/sophia/parser/groovy/**"/>
+    		<exclude name = "com/sophia/parser/jparsec/**"/>
+    		<exclude name = "com/sophia/parser/yacc/**.y"/>
+    		<exclude name = "com/sophia/parser/yacc/m211"/>
+    		<exclude name = "com/sophia/parser/yacc/m239"/>
+    		<exclude name = "com/sophia/parser/yacc/make"/>
+    	</fileset>
+    </jar>
+
+	<copy file="${jar.name}" todir="${base.home}"/>
+  </target>
+
+<!-- ========== Targets: "External" Targets: Clean-up ===================== -->
+
+  <target name="clean" description="Clean build and distribution directories">
+    <delete dir="${dist.home}"/>
+  </target>
+
+  <target name="all" depends="clean, jar, javadoc" description="Clean and compile all components"/>
+
+<!-- ========== Targets: "External" Targets: Compilation ================== -->
+
+  <target name="compile" description="Compile shareable components">
+  	<mkdir dir="${dist.home}"/>
+    <javac srcdir      = "${src.home}"
+           destdir     = "${dist.home}"
+           debug       = "${compile.debug}"
+           deprecation = "${compile.deprecation}"
+           optimize    = "${compile.optimize}">
+      <classpath refid = "compile.classpath"/>
+    </javac>
+  </target>
+
+  <target name="jdo-compile" description="Compile jdo test suite">
+  	<mkdir dir="${dist.home}"/>
+    <javac srcdir      = "${test.src.home}"
+           destdir     = "${dist.home}"
+           debug       = "${compile.debug}"
+           deprecation = "${compile.deprecation}"
+           optimize    = "${compile.optimize}">
+      <classpath refid = "compile.classpath"/>
+    </javac>
+  </target>
+
+  <target name="javadoc" depends="compile" description="Create component Javadoc documentation">
+    <mkdir dir = "${doc.home}"/>
+    <mkdir dir = "${doc.home}/api"/>
+    <javadoc sourcepath   = "${src.home}/"
+             destdir      = "${doc.home}/api"
+             packagenames = "com.positec.mail.*"
+             classpath	  = "${commons-logging.jar}"
+             author       = "true"
+             protected    = "true"
+             version      = "true"
+             use	      = "true"
+             doctitle     = "&lt;h1&gt;${component.title}&lt;/h1&gt;"
+             windowtitle  = "${component.title} (Version ${component.version})"
+             charset	  = "gb2312"
+             bottom       = "Copyright (c) 2001-2004 - Positec">
+<!-- 
+      <link href="${javadoc.j2sdk.link}"/>
+      <link href="${javadoc.logging.link}"/>
+-->
+    </javadoc>
+  </target>
+</project>

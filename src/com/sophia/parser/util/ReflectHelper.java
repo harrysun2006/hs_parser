@@ -66,7 +66,7 @@ public class ReflectHelper {
 	};
 
 	/**
-	 * ¸ù¾İÊı¾İÀàĞÍµÄ´óĞ¡ºÍº¬Òå·µ»Ø2¸öÀàĞÍµÄ²îÒìĞÔ,Ô½Ğ¡Ô½ÏàËÆ,-1±íÊ¾ÎŞ·¨×ª»»(×ª»»¿ÉÄÜ¶ªÊ§Êı¾İ)
+	 * æ ¹æ®æ•°æ®ç±»å‹çš„å¤§å°å’Œå«ä¹‰è¿”å›2ä¸ªç±»å‹çš„å·®å¼‚æ€§,è¶Šå°è¶Šç›¸ä¼¼,-1è¡¨ç¤ºæ— æ³•è½¬æ¢(è½¬æ¢å¯èƒ½ä¸¢å¤±æ•°æ®)
 	 * boolean:     1-bit
 	 * byte:        8-bit
 	 * char:        16-bit
@@ -106,7 +106,7 @@ public class ReflectHelper {
 	};
 
 	/**
-	 * ²éÕÒclazzÔÚÊı×éclassesÖĞµÄÎ»ÖÃ
+	 * æŸ¥æ‰¾clazzåœ¨æ•°ç»„classesä¸­çš„ä½ç½®
 	 * @param clazz
 	 * @param classes
 	 * @return
@@ -119,7 +119,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ²éÕÒÊı¾İÀàĞÍ²îÒì±í, ·µ»Ø2¸öÊı¾İÀàĞÍµÄ²îÒìÖ¸Êı
+	 * æŸ¥æ‰¾æ•°æ®ç±»å‹å·®å¼‚è¡¨, è¿”å›2ä¸ªæ•°æ®ç±»å‹çš„å·®å¼‚æŒ‡æ•°
 	 * @param one
 	 * @param other
 	 * @return
@@ -138,7 +138,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ·µ»Ø2×éÊı¾İÀàĞÍµÄ²îÒìÖ¸ÊıÖ®ºÍ
+	 * è¿”å›2ç»„æ•°æ®ç±»å‹çš„å·®å¼‚æŒ‡æ•°ä¹‹å’Œ
 	 * @param one
 	 * @param other
 	 * @return
@@ -161,7 +161,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ½«²ÎÊıÊı×é×ª»»ÎªÖÆ¶¨ÀàĞÍµÄ¶ÔÏóÊı×é
+	 * å°†å‚æ•°æ•°ç»„è½¬æ¢ä¸ºåˆ¶å®šç±»å‹çš„å¯¹è±¡æ•°ç»„
 	 * @param originals
 	 * @param types
 	 * @return
@@ -185,7 +185,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ½«×Ö·û´®×ª»¯ÎªÖÆ¶¨ÀàĞÍµÄ¶ÔÏó
+	 * å°†å­—ç¬¦ä¸²è½¬åŒ–ä¸ºåˆ¶å®šç±»å‹çš„å¯¹è±¡
 	 * @param value
 	 * @param type
 	 * @return
@@ -251,7 +251,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ½«Êı×Ö×ª»¯ÎªÖÆ¶¨ÀàĞÍµÄ¶ÔÏó
+	 * å°†æ•°å­—è½¬åŒ–ä¸ºåˆ¶å®šç±»å‹çš„å¯¹è±¡
 	 * @param value
 	 * @param type
 	 * @return
@@ -287,7 +287,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ½«¶ÔÏó×ª»¯ÎªBigDecimalÀàĞÍ
+	 * å°†å¯¹è±¡è½¬åŒ–ä¸ºBigDecimalç±»å‹
 	 * @param value
 	 * @return
 	 */
@@ -307,7 +307,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ½«¶ÔÏó×ª»¯ÎªBigIntegerÀàĞÍ
+	 * å°†å¯¹è±¡è½¬åŒ–ä¸ºBigIntegerç±»å‹
 	 * @param value
 	 * @return
 	 */
@@ -321,7 +321,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ¸ù¾İÖÆ¶¨ÀàĞÍ×ª»¯¶ÔÏó
+	 * æ ¹æ®åˆ¶å®šç±»å‹è½¬åŒ–å¯¹è±¡
 	 * @param source
 	 * @param type
 	 * @return
@@ -349,7 +349,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ·µ»ØÀàÖĞ¶ÔÓ¦²ÎÊıÀàĞÍµÄ¹¹Ôì×Ó
+	 * è¿”å›ç±»ä¸­å¯¹åº”å‚æ•°ç±»å‹çš„æ„é€ å­
 	 * @param clazz
 	 * @param argTypes
 	 * @return
@@ -404,7 +404,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * µ÷ÓÃÀàÃû¶ÔÓ¦ÀàµÄ¹¹Ôì×Ó
+	 * è°ƒç”¨ç±»åå¯¹åº”ç±»çš„æ„é€ å­
 	 * @param name
 	 * @param argValues
 	 * @return
@@ -420,7 +420,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * µ÷ÓÃÀàµÄ¹¹Ôì×Ó
+	 * è°ƒç”¨ç±»çš„æ„é€ å­
 	 * @param clazz
 	 * @param argValues
 	 * @return
@@ -435,7 +435,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * °´Ö¸¶¨µÄ²ÎÊıÀàĞÍµ÷ÓÃÀàÃû¶ÔÓ¦ÀàµÄ¹¹Ôì×Ó
+	 * æŒ‰æŒ‡å®šçš„å‚æ•°ç±»å‹è°ƒç”¨ç±»åå¯¹åº”ç±»çš„æ„é€ å­
 	 * @param name
 	 * @param argTypes
 	 * @param argValues
@@ -452,7 +452,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * °´Ö¸¶¨µÄ²ÎÊıÀàĞÍµ÷ÓÃÀàµÄ¹¹Ôì×Ó
+	 * æŒ‰æŒ‡å®šçš„å‚æ•°ç±»å‹è°ƒç”¨ç±»çš„æ„é€ å­
 	 * @param clazz
 	 * @param argTypes
 	 * @param argValues
@@ -476,7 +476,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ·µ»Ø¶ÔÏóÖĞÃû×ÖÎªnameµÄ·½·¨
+	 * è¿”å›å¯¹è±¡ä¸­åå­—ä¸ºnameçš„æ–¹æ³•
 	 * @param anObject
 	 * @param name
 	 * @return
@@ -490,7 +490,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ·µ»Ø¶ÔÏóÖĞÃû×ÖÎªnameµÄ·½·¨
+	 * è¿”å›å¯¹è±¡ä¸­åå­—ä¸ºnameçš„æ–¹æ³•
 	 * @param anObject
 	 * @param name
 	 * @return
@@ -508,7 +508,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ·µ»ØÀàÖĞÃû×ÖÎªnameµÄ·½·¨
+	 * è¿”å›ç±»ä¸­åå­—ä¸ºnameçš„æ–¹æ³•
 	 * @param clazz
 	 * @param name
 	 * @param argTypes
@@ -569,7 +569,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ·µ»Ø¶ÔÏóÖĞÃû×ÖÎªnameµÄ·½·¨
+	 * è¿”å›å¯¹è±¡ä¸­åå­—ä¸ºnameçš„æ–¹æ³•
 	 * @param anObject
 	 * @param name
 	 * @return
@@ -585,7 +585,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * µ÷ÓÃ¶ÔÏóµÄÃû×ÖÎªnameµÄ·½·¨
+	 * è°ƒç”¨å¯¹è±¡çš„åå­—ä¸ºnameçš„æ–¹æ³•
 	 * @param anObject
 	 * @param name
 	 * @param argValues
@@ -602,7 +602,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * °´Ö¸¶¨µÄ²ÎÊıÀàĞÍµ÷ÓÃ¶ÔÏóµÄÃû×ÖÎªnameµÄ·½·¨
+	 * æŒ‰æŒ‡å®šçš„å‚æ•°ç±»å‹è°ƒç”¨å¯¹è±¡çš„åå­—ä¸ºnameçš„æ–¹æ³•
 	 * @param anObject
 	 * @param name
 	 * @param argTypes
@@ -647,7 +647,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ·µ»Ø¶ÔÏóµÄÊôĞÔÀàĞÍ
+	 * è¿”å›å¯¹è±¡çš„å±æ€§ç±»å‹
 	 * @param anObject
 	 * @param property
 	 * @return
@@ -676,7 +676,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ·µ»Ø¶ÔÏóµÄÀàĞÍ,Èç¹ûÊÇÔ­Ê¼ÀàĞÍÔò·µ»Ø¶ÔÓ¦µÄ°ü×°ÀàĞÍ
+	 * è¿”å›å¯¹è±¡çš„ç±»å‹,å¦‚æœæ˜¯åŸå§‹ç±»å‹åˆ™è¿”å›å¯¹åº”çš„åŒ…è£…ç±»å‹
 	 * @param anObject
 	 * @return
 	 */
@@ -706,7 +706,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ·µ»Ø¶ÔÏóµÄÊôĞÔÖµ
+	 * è¿”å›å¯¹è±¡çš„å±æ€§å€¼
 	 * @param anObject
 	 * @param property
 	 * @return
@@ -739,7 +739,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ÉèÖÃ¶ÔÏóµÄÊôĞÔÖµ
+	 * è®¾ç½®å¯¹è±¡çš„å±æ€§å€¼
 	 * @param anObject
 	 * @param property
 	 * @param argValues
@@ -772,7 +772,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ·µ»Ø¶ÔÏóÖĞÃû×ÖÎªnameµÄÓò
+	 * è¿”å›å¯¹è±¡ä¸­åå­—ä¸ºnameçš„åŸŸ
 	 * @param anObject
 	 * @param name
 	 * @return
@@ -786,7 +786,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ·µ»Ø¶ÔÏóÖĞÃû×ÖÎªnameµÄÓò
+	 * è¿”å›å¯¹è±¡ä¸­åå­—ä¸ºnameçš„åŸŸ
 	 * @param anObject
 	 * @param name
 	 * @param type
@@ -805,7 +805,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ·µ»ØÀàÖĞÃû×ÖÎªnameµÄÓò
+	 * è¿”å›ç±»ä¸­åå­—ä¸ºnameçš„åŸŸ
 	 * @param clazz
 	 * @param name
 	 * @param type
@@ -844,7 +844,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ·µ»Ø¶ÔÏóµÄÃû×ÖÎªnameµÄÓòÖµ
+	 * è¿”å›å¯¹è±¡çš„åå­—ä¸ºnameçš„åŸŸå€¼
 	 * @param anObject
 	 * @param name
 	 * @return
@@ -859,7 +859,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ·µ»Ø¶ÔÏóµÄÃû×ÖÎªnameµÄÓòÖµ
+	 * è¿”å›å¯¹è±¡çš„åå­—ä¸ºnameçš„åŸŸå€¼
 	 * @param anObject
 	 * @param name
 	 * @param type
@@ -885,7 +885,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ÉèÖÃ¶ÔÏóµÄÃû×ÖÎªnameµÄÓòÖµ
+	 * è®¾ç½®å¯¹è±¡çš„åå­—ä¸ºnameçš„åŸŸå€¼
 	 * @param anObject
 	 * @param name
 	 * @param value
@@ -911,7 +911,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ÔÚÔËĞĞ»·¾³ÖĞ¸ù¾İÃû×Ö²éÕÒÀà
+	 * åœ¨è¿è¡Œç¯å¢ƒä¸­æ ¹æ®åå­—æŸ¥æ‰¾ç±»
 	 * @param name
 	 * @return
 	 * @throws ClassNotFoundException
@@ -921,7 +921,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ÔÚÔËĞĞ»·¾³ÖĞ¸ù¾İÃû×Ö²éÕÒÀà
+	 * åœ¨è¿è¡Œç¯å¢ƒä¸­æ ¹æ®åå­—æŸ¥æ‰¾ç±»
 	 * @param name
 	 * @param packages
 	 * @return
@@ -952,7 +952,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ÇóÊôĞÔÖµÄ£¿é½Ó¿Ú
+	 * æ±‚å±æ€§å€¼æ¨¡å—æ¥å£
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -963,7 +963,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ¶ÔxyzÊôĞÔÈ¡object.getXyz()·µ»ØÖµ
+	 * å¯¹xyzå±æ€§å–object.getXyz()è¿”å›å€¼
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -981,7 +981,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ¶ÔxyzÊôĞÔÈ¡object.getxyz()·µ»ØÖµ
+	 * å¯¹xyzå±æ€§å–object.getxyz()è¿”å›å€¼
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -994,7 +994,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ¶ÔxyzÊôĞÔÈ¡object.xyzÓòÖµ
+	 * å¯¹xyzå±æ€§å–object.xyzåŸŸå€¼
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -1007,7 +1007,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * Êı×éÀàĞÍ"length"ÊôĞÔµÄÌØÊâ´¦Àí
+	 * æ•°ç»„ç±»å‹"length"å±æ€§çš„ç‰¹æ®Šå¤„ç†
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -1057,7 +1057,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ÉèÖÃÊôĞÔÖµÄ£¿é½Ó¿Ú
+	 * è®¾ç½®å±æ€§å€¼æ¨¡å—æ¥å£
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -1068,7 +1068,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * µ÷ÓÃobject.setXyz(...)À´ÉèÖÃxyzÊôĞÔ
+	 * è°ƒç”¨object.setXyz(...)æ¥è®¾ç½®xyzå±æ€§
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -1086,7 +1086,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * µ÷ÓÃobject.setxyz(...)À´ÉèÖÃxyzÊôĞÔ
+	 * è°ƒç”¨object.setxyz(...)æ¥è®¾ç½®xyzå±æ€§
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -1099,7 +1099,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ¶ÔÓòobject.xyz¸³ÖµÀ´ÉèÖÃxyzÊôĞÔ
+	 * å¯¹åŸŸobject.xyzèµ‹å€¼æ¥è®¾ç½®xyzå±æ€§
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -1113,7 +1113,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ÔÚÔËĞĞ»·¾³ÖĞ¸ù¾İÃû×Ö²éÕÒÀàµÄÄ£¿é½Ó¿Ú
+	 * åœ¨è¿è¡Œç¯å¢ƒä¸­æ ¹æ®åå­—æŸ¥æ‰¾ç±»çš„æ¨¡å—æ¥å£
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -1124,7 +1124,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * Ê¹ÓÃµ±Ç°Ïß³ÌµÄÀà×°ÔØÆ÷²éÕÒ
+	 * ä½¿ç”¨å½“å‰çº¿ç¨‹çš„ç±»è£…è½½å™¨æŸ¥æ‰¾
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -1137,7 +1137,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * Ê¹ÓÃClassÀàµÄ¾²Ì¬·½·¨forName²éÕÒ
+	 * ä½¿ç”¨Classç±»çš„é™æ€æ–¹æ³•forNameæŸ¥æ‰¾
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -1150,7 +1150,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ÔÚ´«ÈëµÄ°üÃû²ÎÊıÖĞ²éÕÒ
+	 * åœ¨ä¼ å…¥çš„åŒ…åå‚æ•°ä¸­æŸ¥æ‰¾
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -1174,7 +1174,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ÔÚ³£ÓÃJ2EE°üÖĞ²éÕÒ
+	 * åœ¨å¸¸ç”¨J2EEåŒ…ä¸­æŸ¥æ‰¾
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -1197,7 +1197,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * Çó¶ÔÏóÊôĞÔÀàĞÍµÄÄ£¿é½Ó¿Ú
+	 * æ±‚å¯¹è±¡å±æ€§ç±»å‹çš„æ¨¡å—æ¥å£
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -1208,7 +1208,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ¶ÔxyzÊôĞÔÈ¡object.getXyz()·½·¨µÄ·µ»ØÀàĞÍ
+	 * å¯¹xyzå±æ€§å–object.getXyz()æ–¹æ³•çš„è¿”å›ç±»å‹
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -1227,7 +1227,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ¶ÔxyzÊôĞÔÈ¡object.getxyz()·½·¨µÄ·µ»ØÀàĞÍ
+	 * å¯¹xyzå±æ€§å–object.getxyz()æ–¹æ³•çš„è¿”å›ç±»å‹
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -1241,7 +1241,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * ¶ÔxyzÊôĞÔÈ¡object.xyzÓòµÄÀàĞÍ
+	 * å¯¹xyzå±æ€§å–object.xyzåŸŸçš„ç±»å‹
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10
@@ -1255,7 +1255,7 @@ public class ReflectHelper {
 	}
 
 	/**
-	 * Êı×éÀàĞÍ"length"ÊôĞÔµÄÌØÊâ´¦Àí
+	 * æ•°ç»„ç±»å‹"length"å±æ€§çš„ç‰¹æ®Šå¤„ç†
 	 * @author harry.sun
 	 * mail: hysun@thorn-bird.com
 	 * 2005-11-10

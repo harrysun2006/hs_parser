@@ -24,7 +24,7 @@ public class ResourceHelper {
 	private static ClassLoader nativeLoader = new ResourceHelper.NativeClassLoader();
 
 	/**
-	 * native(°üÄÚ)ÊÇ·ñ´æÔÚÎÄ¼ş
+	 * native(åŒ…å†…)æ˜¯å¦å­˜åœ¨æ–‡ä»¶
 	 * @param fileName
 	 * @return
 	 */
@@ -36,7 +36,7 @@ public class ResourceHelper {
 	}
 
 	/**
-	 * ·µ»ØÎÄ¼şÊäÈëÁ÷, ÎÄ¼şËÑË÷Ë³Ğò: classpath
+	 * è¿”å›æ–‡ä»¶è¾“å…¥æµ, æ–‡ä»¶æœç´¢é¡ºåº: classpath
 	 * @param fileName
 	 * @return
 	 */
@@ -45,7 +45,7 @@ public class ResourceHelper {
 	}
 
 	/**
-	 * ·µ»ØnativeÎÄ¼şÊäÈëÁ÷, ÎÄ¼şËÑË÷Ë³Ğò: native package
+	 * è¿”å›nativeæ–‡ä»¶è¾“å…¥æµ, æ–‡ä»¶æœç´¢é¡ºåº: native package
 	 * @param fileName
 	 * @return
 	 */
@@ -54,7 +54,7 @@ public class ResourceHelper {
 	}
 
 	/**
-	 * ·µ»ØÎÄ¼şÊäÈëÁ÷
+	 * è¿”å›æ–‡ä»¶è¾“å…¥æµ
 	 * @param fileName
 	 * @param loader
 	 * @return
@@ -69,7 +69,7 @@ public class ResourceHelper {
 	}
 
 	/**
-	 * ·µ»ØÎÄ¼ş×ÊÔ´URL
+	 * è¿”å›æ–‡ä»¶èµ„æºURL
 	 * @param name
 	 * @return
 	 */
@@ -78,7 +78,7 @@ public class ResourceHelper {
 	}
 
 	/**
-	 * ·µ»Ønative(°üÄÚ)µÄÎÄ¼ş×ÊÔ´URL
+	 * è¿”å›native(åŒ…å†…)çš„æ–‡ä»¶èµ„æºURL
 	 * @param name
 	 * @return
 	 */
@@ -106,7 +106,7 @@ public class ResourceHelper {
 	}
 
 	/**
-	 * ÔØÈënative(°üÄÚ)µÄ×ÊÔ´ÎÄ¼ş
+	 * è½½å…¥native(åŒ…å†…)çš„èµ„æºæ–‡ä»¶
 	 * @param baseName
 	 * @return
 	 */
@@ -115,7 +115,7 @@ public class ResourceHelper {
 	}
 
 	/**
-	 * ÔØÈënative(°üÄÚ)µÄ×ÊÔ´ÎÄ¼ş
+	 * è½½å…¥native(åŒ…å†…)çš„èµ„æºæ–‡ä»¶
 	 * @param baseName
 	 * @param locale
 	 * @return

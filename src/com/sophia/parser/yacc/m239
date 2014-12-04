@@ -1,29 +1,29 @@
 <PARAMETER>pPayAcc
-<NAME>¹¤×Ê±íÕÊÌ×
+<NAME>å·¥èµ„è¡¨å¸å¥—
 <NAME_E>Pay account
 <TYPE>C
 <SQL>SELECT gzlb,lbmc FROM hs_gzlb
 <DEFAULT>01
 
 <PARAMETER>pPeriod
-<NAME>½áËãÆÚ¼ä
+<NAME>ç»“ç®—æœŸé—´
 <NAME_E>Pay periods
 <TYPE>C
 <SQL>SELECT DISTINCT jsqj FROM hs_gz_01
 
 <PARAMETER>pNot
-<NAME>Ó¦Ë°/ÃâË°
+<NAME>åº”ç¨/å…ç¨
 <NAME_E>Tax/Not tax
 <TYPE>C
-<CODE>È«²¿,Ó¦Ë°,ÃâË°
+<CODE>å…¨éƒ¨,åº”ç¨,å…ç¨
 <CODE_E>All,Tax,Not tax
 <RPTKEY>1
 
 <PARAMETER>pRegion
-<NAME>¼ÆË°µØÇø
+<NAME>è®¡ç¨åœ°åŒº
 <NAME_E>Tax region
 <TYPE>C
-<CODE>´óÂ½,·Ç´óÂ½
+<CODE>å¤§é™†,éå¤§é™†
 <CODE_E>Mainland,Not Mainland
 <RPTKEY>1
 
@@ -35,28 +35,28 @@
 	endif
 
 	*====================================
-	*-- ÏÂÁĞÄÚÈİ¿ÉÄÜĞèÒª¸ù¾İÊµ¼ÊÇé¿ö¸ü¸Ä 
+	*-- ä¸‹åˆ—å†…å®¹å¯èƒ½éœ€è¦æ ¹æ®å®é™…æƒ…å†µæ›´æ”¹ 
 	*-----------------------------------
-	*-- ¼ÆË°¶îÀ¸Î»Ãû³Æ
+	*-- è®¡ç¨é¢æ ä½åç§°
 	lcForTaxCol = 's.f0033'
 
-	*-- ¿Û¼õË°¶îÀ¸Î»Ãû³Æ
+	*-- æ‰£å‡ç¨é¢æ ä½åç§°
 	lcTaxSumCol = 's.f0034'
 
-	*-- Ô±¹¤ÇøÓòÀ¸Î»
+	*-- å‘˜å·¥åŒºåŸŸæ ä½
 	lcRegCol = ''
 
-	*-- ´óÂ½Ô±¹¤Ó¦Ë°ÆğÊ¼½ğ¶î(Ä¬ÈÏµÄ)
+	*-- å¤§é™†å‘˜å·¥åº”ç¨èµ·å§‹é‡‘é¢(é»˜è®¤çš„)
 	lcSP1 = '800'
 
-	*-- ·Ç´óÂ½Ô±¹¤Ó¦Ë°ÆğÊ¼½ğ¶î
+	*-- éå¤§é™†å‘˜å·¥åº”ç¨èµ·å§‹é‡‘é¢
 	lcSP2 = '4000'
 	*====================================
-	lcMain = mlc('´óÂ½','Mainland')
+	lcMain = mlc('å¤§é™†','Mainland')
 	lcSPReg = iif(empty(lcRegCol), "&lcSP1.",;
 		" CASE &lcRegCol. WHEN '&lcMain.' THEN &lcSP1. ELSE &lcSP2. END")
 
-	lcRegExpr = iif(empty(pNot) or pNot=mlc("È«²¿","All"), "", " AND &lcTaxSumCol. > 0 ") + ;
+	lcRegExpr = iif(empty(pNot) or pNot=mlc("å…¨éƒ¨","All"), "", " AND &lcTaxSumCol. > 0 ") + ;
 		iif(empty(pRegion) or empty(lcRegCol), "", " AND &lcRegCol.='&pRegion.' ")
 
 	lcSql = "SELECT p.zgbh, p.zgxm, p.zwbh, s.jsqj, s.sfgz, " + ;
@@ -71,5 +71,5 @@
 		select recno() as sno, * from _curReport into cursor _curReport
 	endif
 
-<CAPTION>ĞòºÅ|Ô±¹¤±àºÅ|ĞÕÃû|Ö°Îñ|ÆÚ¼ä|Êµ·¢¹¤×Ê|¼õ·ÑÓÃ¶î|Ó¦ÄÉËùµÃË°¶î|Ë°ÂÊ%|ËÙËã¿Û³ıÊı|¿Û¼õËùµÃË°¶î
+<CAPTION>åºå·|å‘˜å·¥ç¼–å·|å§“å|èŒåŠ¡|æœŸé—´|å®å‘å·¥èµ„|å‡è´¹ç”¨é¢|åº”çº³æ‰€å¾—ç¨é¢|ç¨ç‡%|é€Ÿç®—æ‰£é™¤æ•°|æ‰£å‡æ‰€å¾—ç¨é¢
 <CAPTION_E>SeqNo|EmpNo|Name|Position|Period|Income|Sub sum|Taxable income|Tax income|Tax rate%|Return sum|Tax

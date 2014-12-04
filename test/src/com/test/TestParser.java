@@ -62,7 +62,7 @@ public class TestParser {
 		context.put("min", new Integer(0));
 		context.put("max", new Integer(100));
 		context.put("math", Math.class);
-		context.put("product", new Product("PDI13", "13mm≥Âª˜◊Í", Product.Quality.BEST));
+		context.put("product", new Product("PDI13", "13mmÂÜ≤ÂáªÈíª", Product.Quality.BEST));
 		context.put("p1", Product.class);
 		context.put("p2", Product.class);
 		context.put("p3", Product.class);
@@ -182,15 +182,16 @@ public class TestParser {
 	};
 
 	private final static Object[][] tests = new Object[][] {
-		//new Object[]{new com.sophia.parser.yacc.Calculator(), exprs1, "BYACC/J Calculator:"},
-		//new Object[]{new com.sophia.parser.jparsec.Calculator(), exprs1, "ParseC Calculator:"},
+		new Object[]{new com.sophia.parser.yacc.Calculator(), exprs1, "BYACC/J Calculator:"},
+		new Object[]{new com.sophia.parser.jparsec.Calculator(), exprs1, "ParseC Calculator:"},
 		//new Object[]{new com.sophia.parser.groovy.Calculator(), exprs1, "Groovy Calculator:"},
-		//new Object[]{new com.sophia.parser.yacc.Evaluator(), exprs2, "BYACC/J Evaluator:"},
-		//new Object[]{new com.sophia.parser.jparsec.Evaluator(), exprs2, "ParseC Evaluator:"},
+		new Object[]{new com.sophia.parser.yacc.Evaluator2(), exprs1, "BYACC/J Evaluator 2:"},
+		new Object[]{new com.sophia.parser.yacc.Evaluator(), exprs2, "BYACC/J Evaluator:"},
+		new Object[]{new com.sophia.parser.jparsec.Evaluator(), exprs2, "ParseC Evaluator:"},
 		//new Object[]{new com.sophia.parser.groovy.Evaluator(), exprs2, "Groovy Evaluator:"},
-		//new Object[]{new com.sophia.parser.yacc.Evaluator2(), exprs2, "BYACC/J Evaluator 2:"},
-		//new Object[]{new com.sophia.parser.yacc.Calculator(), exprs4, "BYACC/J Calculator:"},
-		//new Object[]{new com.sophia.parser.yacc.Evaluator(), exprs4, "BYACC/J Evaluator:"},
+		new Object[]{new com.sophia.parser.yacc.Evaluator2(), exprs2, "BYACC/J Evaluator 2:"},
+		new Object[]{new com.sophia.parser.yacc.Calculator(), exprs4, "BYACC/J Calculator:"},
+		new Object[]{new com.sophia.parser.yacc.Evaluator(), exprs4, "BYACC/J Evaluator:"},
 		new Object[]{new com.sophia.parser.yacc.Evaluator2(), exprs4, "BYACC/J Validator 2:"},
 	};
 
@@ -223,7 +224,7 @@ public class TestParser {
 		for(int i = 0; i < exprs.length; i++) {
 			s = exprs[i];
 			try {
-				if (i != 6 || s.startsWith("#")) continue;
+				// if (i != 6 || s.startsWith("#")) continue;
 				if (s.equalsIgnoreCase("quit") || s.equalsIgnoreCase("exit")) break;
 				//collector = new Collector();
 				//translator = new Translator();
@@ -231,48 +232,48 @@ public class TestParser {
 				//parser.addVisitor(collector);
 				//parser.addVisitor(translator);
 				//parser.addVisitor(reporter);
-				parser.addVisitor(traversal);
+				//parser.addVisitor(traversal);
 				r = parser.evaluate(s, context);
 				System.out.println(i + ". " + s + " = " + DebugHelper.debug(r));
 				//debug(collector.getResult());
 				//System.err.println("===>" + translator.getResult());
 			} catch (Exception e) {
-				log.error(i + ". " + s, e);
+				log.error(i + ". " + s + e);
 			}
 		}
 		Date e = new Date();
 		System.out.println("use " + (e.getTime() - b.getTime()) + " ms.\n");
 	}
 
-	// ≤‚ ‘±Ì¥Ô Ω∑≠“Î
+	// ÊµãËØïË°®ËææÂºèÁøªËØë
 	private static void testTranslate() {
 		try {
-			Product p1 = new Product("PDIA001", "≥Âª˜◊ÍA001", Product.Quality.GOOD, "selling", 88.0, 128.5, 1000, new Integer(1850));
-			Product p2 = new Product("PDIA002", "≥Âª˜◊ÍA002", Product.Quality.BEST, "concept", 78.3, 99.7, 550, new Integer(1300));
-			Customer c = new Customer("B&Q", "∞Ÿ∞≤æ”", "blank");
+			Product p1 = new Product("PDIA001", "ÂÜ≤ÂáªÈíªA001", Product.Quality.GOOD, "selling", 88.0, 128.5, 1000, new Integer(1850));
+			Product p2 = new Product("PDIA002", "ÂÜ≤ÂáªÈíªA002", Product.Quality.BEST, "concept", 78.3, 99.7, 550, new Integer(1300));
+			Customer c = new Customer("B&Q", "ÁôæÂÆâÂ±Ö", "blank");
 			String s = "pa1.getStatus().length()==2.+3*(5+6)&&pa1.getStatus().substring(0, pa2.status.length() - 4)=='sell'&&pa2.status=='develop'&&pa1.buyPrice<pa2.buyPrice&&pa1.name!='PDI<pa2pa1'&&c.status=='approved'";
 			ParseContext context = new ParseContext();
 			context.put("pa1", Product.class);
 			context.put("pa2", p2);
 			context.put("c", Customer.class);
 			Map map = new Hashtable();
-			map.put("pa1", "≤˙∆∑1");
-			map.put("pa2", "≤˙∆∑2");
-			map.put("c", "øÕªß");
-			map.put(Product.class, "≤˙∆∑");
-			map.put("name", "√˚≥∆");
-			map.put("com.test.Product.status", "◊¥Ã¨1");
-			map.put("com.test.Customer.status", "◊¥Ã¨2");
-			map.put("getStatus", "◊¥Ã¨1");
-			map.put("length", "≥§∂»");
-			map.put("substring", "◊”¥Æ");
-			map.put("buyPrice", "¬Ú»Îº€");
-			map.put("sellPrice", "¬Ù≥ˆº€");
-			map.put("count", " ˝¡ø");
-			map.put("&&", " ≤¢«“ ");
-			map.put("==", " µ»”⁄ ");
-			map.put("!=", " ≤ªµ»”⁄ ");
-			map.put("<", " –°”⁄ ");
+			map.put("pa1", "‰∫ßÂìÅ1");
+			map.put("pa2", "‰∫ßÂìÅ2");
+			map.put("c", "ÂÆ¢Êà∑");
+			map.put(Product.class, "‰∫ßÂìÅ");
+			map.put("name", "ÂêçÁß∞");
+			map.put("com.test.Product.status", "Áä∂ÊÄÅ1");
+			map.put("com.test.Customer.status", "Áä∂ÊÄÅ2");
+			map.put("getStatus", "Áä∂ÊÄÅ1");
+			map.put("length", "ÈïøÂ∫¶");
+			map.put("substring", "Â≠ê‰∏≤");
+			map.put("buyPrice", "‰π∞ÂÖ•‰ª∑");
+			map.put("sellPrice", "ÂçñÂá∫‰ª∑");
+			map.put("count", "Êï∞Èáè");
+			map.put("&&", " Âπ∂‰∏î ");
+			map.put("==", " Á≠â‰∫é ");
+			map.put("!=", " ‰∏çÁ≠â‰∫é ");
+			map.put("<", " Â∞è‰∫é ");
 			String r = translate(s, context, map);
 			System.out.println("expression: " + s);
 			System.err.println("translate to: " + r);

@@ -24,7 +24,7 @@ import com.sophia.parser.util.ReflectHelper;
 class ValueHelper {
 
 	/**
-	 * È·¶¨2ÊıËãÊõÔËËãµÄ·µ»ØÀàĞÍ
+	 * ç¡®å®š2æ•°ç®—æœ¯è¿ç®—çš„è¿”å›ç±»å‹
 	 * @param n1
 	 * @param n2
 	 * @return
@@ -37,7 +37,7 @@ class ValueHelper {
 	}
 
 	/**
-	 * È·¶¨ÊıµÄÀàĞÍ
+	 * ç¡®å®šæ•°çš„ç±»å‹
 	 * @param n
 	 * @return
 	 */
@@ -87,7 +87,7 @@ class ValueHelper {
 	}
 
 	/**
-	 * a+b,Ö§³ÖÊı×ÖºÍ×Ö·û´®
+	 * a+b,æ”¯æŒæ•°å­—å’Œå­—ç¬¦ä¸²
 	 * @param a
 	 * @param b
 	 * @return
@@ -203,7 +203,7 @@ class ValueHelper {
 	}
 
 	/**
-	 * aµÄb´Î·½
+	 * açš„bæ¬¡æ–¹
 	 * @param a
 	 * @param b
 	 * @return
@@ -481,7 +481,7 @@ class ValueHelper {
 	}
 
 	/**
-	 * Êı×é(e1, e2, ... ..., en) or [e1, e2, ... ..., en]
+	 * æ•°ç»„(e1, e2, ... ..., en) or [e1, e2, ... ..., en]
 	 * @param o
 	 * @return
 	 */
@@ -497,7 +497,7 @@ class ValueHelper {
 	}
 
 	/**
-	 * ÁĞ±í{e1, e2, ... ..., en}
+	 * åˆ—è¡¨{e1, e2, ... ..., en}
 	 * @param o
 	 * @return
 	 */
@@ -509,7 +509,7 @@ class ValueHelper {
 	}
 
 	/**
-	 * ³ÉÔ±: ·½·¨»òÊôĞÔ
+	 * æˆå‘˜: æ–¹æ³•æˆ–å±æ€§
 	 * @param a
 	 * @param b
 	 * @return
@@ -534,7 +534,7 @@ class ValueHelper {
 	}
 
 	/**
-	 * µ÷ÓÃ³ÉÔ±: Çó·½·¨»òÊôĞÔÖµ
+	 * è°ƒç”¨æˆå‘˜: æ±‚æ–¹æ³•æˆ–å±æ€§å€¼
 	 * @param a
 	 * @param b
 	 * @return
@@ -545,7 +545,7 @@ class ValueHelper {
 	}
 
 	/**
-	 * µ÷ÓÃ³ÉÔ±: Çó·½·¨»òÊôĞÔÖµ
+	 * è°ƒç”¨æˆå‘˜: æ±‚æ–¹æ³•æˆ–å±æ€§å€¼
 	 * @param c
 	 * @param a
 	 * @param b
@@ -556,7 +556,7 @@ class ValueHelper {
 		Object v = a;
 		if(a == Constant.PENDING) {
 			if(clazz == null) r = new ParseException("parse.object.expect");
-			else v = clazz;	// Çó¾²Ì¬·½·¨»òÊôĞÔÖµ
+			else v = clazz;	// æ±‚é™æ€æ–¹æ³•æˆ–å±æ€§å€¼
 		}
 		if(a == null) {
 			r = new ParseException("parse.object.expect");
@@ -585,7 +585,7 @@ class ValueHelper {
 	}
 
 	/**
-	 * ¹¹Ôì×Ó: new Object(p1, p2);
+	 * æ„é€ å­: new Object(p1, p2);
 	 * @param o
 	 * @return
 	 */
@@ -606,7 +606,7 @@ class ValueHelper {
 	}
 
 	/**
-	 * true, false, null»ò¸ù¾İÉÏÏÂÎÄÈ¡¶ÔÏó
+	 * true, false, nullæˆ–æ ¹æ®ä¸Šä¸‹æ–‡å–å¯¹è±¡
 	 * @param o
 	 * @param context
 	 * @return
@@ -636,7 +636,7 @@ class ValueHelper {
 	}
 
 	/**
-	 * ¸³Öµ
+	 * èµ‹å€¼
 	 * Date b = new Date();
 	 * d = new Double(9.9);
 	 * int i = 3;

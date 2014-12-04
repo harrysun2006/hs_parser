@@ -1,35 +1,35 @@
 <PARAMETER>pDept
-<NAME>部门
+<NAME>閮ㄩ棬
 <NAME_E>Department
 <TYPE>C
 <SQL>SELECT bmbh,bmmc FROM hp_bmbh ORDER BY bmbh
 
 <PARAMETER>pPos
-<NAME>职位
+<NAME>鑱屼綅
 <NAME_E>Position
 <TYPE>C
 <SQL>SELECT DISTINCT zwbh FROM hp_zd01
 
 <PARAMETER>pPF
-<NAME>专业
+<NAME>涓撲笟
 <NAME_E>Profession
 <TYPE>C
 <SQL>SELECT DISTINCT zy FROM hp_zd01
 
 <PARAMETER>pEdu
-<NAME>学历
+<NAME>瀛﹀巻
 <NAME_E>Education
 <TYPE>C
 <SQL>SELECT DISTINCT xl FROM hp_zd01
 
 <PARAMETER>pLong
-<NAME>资历大于
+<NAME>璧勫巻澶т簬
 <NAME_E>Longevity >
 <TYPE>N
 <DEFAULT>0
 
 <PARAMETER>pLevel
-<NAME>部门层次
+<NAME>閮ㄩ棬灞傛
 <NAME_E>Depart level
 <TYPE>N
 <DEFAULT>1
@@ -51,7 +51,7 @@
 	JustHrDeptListRpt("_cur0", "_curReport", pLevel)
 	CloseTable("_cur0")
 
-<CAPTION>//GetDeptLevel(pLevel) + "工号|姓名|性别|出生日期|职位|专业|学历|职称|特长|爱好|资历"
+<CAPTION>//GetDeptLevel(pLevel) + "宸ュ彿|濮撳悕|鎬у埆|鍑虹敓鏃ユ湡|鑱屼綅|涓撲笟|瀛﹀巻|鑱岀О|鐗归暱|鐖卞ソ|璧勫巻"
 <CAPTION_E>//GetDeptLevel(pLevel) + "EmpNo|EmpName|Sex|Birthday|Position|Profession|Eduction|Title|Skill|Favority|Longevity"
 
 <DATECOL>csrq

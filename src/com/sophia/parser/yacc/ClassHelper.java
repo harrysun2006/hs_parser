@@ -21,7 +21,7 @@ import com.sophia.parser.util.ReflectHelper;
 class ClassHelper {
 
 	/**
-	 * È·¶¨2ÊıËãÊõÔËËãµÄ·µ»ØÀàĞÍ
+	 * ç¡®å®š2æ•°ç®—æœ¯è¿ç®—çš„è¿”å›ç±»å‹
 	 * @param n1
 	 * @param n2
 	 * @return
@@ -38,7 +38,7 @@ class ClassHelper {
 	}
 
 	/**
-	 * È·¶¨ÊıµÄÀàĞÍ
+	 * ç¡®å®šæ•°çš„ç±»å‹
 	 * @param n
 	 * @return
 	 */
@@ -71,7 +71,7 @@ class ClassHelper {
 	}
 
 	/**
-	 * a+b,Ö§³ÖÊı×ÖºÍ×Ö·û´®
+	 * a+b,æ”¯æŒæ•°å­—å’Œå­—ç¬¦ä¸²
 	 * @param a
 	 * @param b
 	 * @return
@@ -163,7 +163,7 @@ class ClassHelper {
 	}
 
 	/**
-	 * aµÄb´Î·½
+	 * açš„bæ¬¡æ–¹
 	 * @param a
 	 * @param b
 	 * @return
@@ -376,7 +376,7 @@ class ClassHelper {
 	}
 
 	/**
-	 * Êı×é(e1, e2, ... ..., en) or [e1, e2, ... ..., en]
+	 * æ•°ç»„(e1, e2, ... ..., en) or [e1, e2, ... ..., en]
 	 * @param a
 	 * @return
 	 */
@@ -385,7 +385,7 @@ class ClassHelper {
 	}
 
 	/**
-	 * ÁĞ±í{e1, e2, ... ..., en}
+	 * åˆ—è¡¨{e1, e2, ... ..., en}
 	 * @param a
 	 * @return
 	 */
@@ -394,7 +394,7 @@ class ClassHelper {
 	}
 
 	/**
-	 * ³ÉÔ±: ·½·¨»òÊôĞÔ
+	 * æˆå‘˜: æ–¹æ³•æˆ–å±æ€§
 	 * @param a
 	 * @param b
 	 * @return
@@ -404,7 +404,7 @@ class ClassHelper {
 	}
 
 	/**
-	 * µ÷ÓÃ³ÉÔ±: È¡·½·¨»òÊôĞÔÖµµÄÀàĞÍ
+	 * è°ƒç”¨æˆå‘˜: å–æ–¹æ³•æˆ–å±æ€§å€¼çš„ç±»å‹
 	 * @param a expr's class
 	 * @param b token(value is member)
 	 * @return
@@ -436,7 +436,7 @@ class ClassHelper {
 	}
 
 	/**
-	 * ¹¹Ôì×Ó: new Object(p1, p2);
+	 * æ„é€ å­: new Object(p1, p2);
 	 * @param o
 	 * @return
 	 */
@@ -456,7 +456,7 @@ class ClassHelper {
 	}
 
 	/**
-	 * Boolean(true, false), null(null)»ò¸ù¾İÉÏÏÂÎÄÈ¡¶ÔÏóµÄÀàĞÍ
+	 * Boolean(true, false), null(null)æˆ–æ ¹æ®ä¸Šä¸‹æ–‡å–å¯¹è±¡çš„ç±»å‹
 	 * @param o
 	 * @param context
 	 * @return
@@ -486,7 +486,7 @@ class ClassHelper {
 	}
 
 	/**
-	 * ¸³Öµ
+	 * èµ‹å€¼
 	 * Date b = new Date();
 	 * d = new Double(9.9);
 	 * int i = 3;
